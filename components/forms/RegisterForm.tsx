@@ -96,7 +96,7 @@ const RegisterForm :React.FC = () => {
         <Input
           type="text"
           className="my-5"
-          value={username}
+          value={username.toString()}
           placeholder="Enter username"
           onChange={(e) => setUsername(e.target.value)}
           aria-label="Username"
@@ -104,7 +104,7 @@ const RegisterForm :React.FC = () => {
         <Input
           type="email"
           className="my-5"
-          value={email}
+          value={email.toString()}
           placeholder="Enter Email"
           onChange={(e) => setEmail(e.target.value)}
           aria-label="Email"
@@ -112,7 +112,7 @@ const RegisterForm :React.FC = () => {
         <Input
           type="password"
           className="my-5"
-          value={password}
+          value={password.toString()}
           placeholder="Enter Password"
           onChange={(e) => setPassword(e.target.value)}
           aria-label="Password"
