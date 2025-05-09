@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ReactEventHandler, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -74,35 +74,35 @@ const router = useRouter();
     fetchCategories();
   }, []);
 
-  const handleCategoryChange = (categoryId) => {
-    setSelectedCategory(categoryId);
-    if (categoryId === "all") {
-      setSubCategories([]);
-    } else {
-      const selectedCategoryObj = categories.find((cat) => cat._id === categoryId);
-      setSubCategories(selectedCategoryObj?.subcategories || []);
-    }
-    setSelectedSubcategory("all");
-  };
+  // const handleCategoryChange = (categoryId:string) => {
+  //   setSelectedCategory(categoryId);
+  //   if (categoryId === "all") {
+  //     setSubCategories([]);
+  //   } else {
+  //     const selectedCategoryObj = categories.find((cat) => cat._id === categoryId);
+  //     // setSubCategories(selectedCategoryObj?.subcategories || []);
+  //   }
+  //   setSelectedSubcategory("all");
+  // };
 
-  const handleSubcategoryChange = (subcategory) => {
+  const handleSubcategoryChange = (subcategory:any) => {
     setSelectedSubcategory(subcategory);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value.toLowerCase());
-  };
+  // const handleSearchChange = (event:ReactEventHandler) => {
+  //   setSearchTerm(event.target.value.toLowerCase());
+  // };
 
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory =
-      selectedCategory === "all" || product.category === selectedCategory;
-    const matchesSubcategory =
-      selectedSubcategory === "all" || product.subcategory === selectedSubcategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm);
-    return matchesCategory && matchesSubcategory && matchesSearch;
-  });
+  // const filteredProducts = products.filter((product) => {
+  //   const matchesCategory =
+  //     selectedCategory === "all" || product.category === selectedCategory;
+  //   const matchesSubcategory =
+  //     selectedSubcategory === "all" || product.subcategory  === selectedSubcategory;
+  //   const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+  //   return matchesCategory && matchesSubcategory && matchesSearch;
+  // });
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product:any) => {
     const cartItem = {
       product: {
         _id: product._id,
@@ -117,7 +117,7 @@ const router = useRouter();
 
   return (
     <div className="p-6">
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
+      {/* <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
         <Select onValueChange={handleCategoryChange} defaultValue="all">
           <SelectTrigger className={"bg-black text-white"}>
             <SelectValue placeholder="Select a category" />
@@ -193,7 +193,7 @@ const router = useRouter();
         </div>
       ) : (
         <div>No products found.</div>
-      )}
+      )} */}
     </div>
   );
 };
