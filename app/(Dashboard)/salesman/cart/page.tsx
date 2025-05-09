@@ -30,11 +30,11 @@ const CartPage = () => {
   const [paymentMethod, setPaymentMethod] = useState<string>("cod");
   const [loading, setLoading] = useState(false);
   const [isClient, setIsClient] = useState<boolean>(false);
-  const [shops, setShops] = useState<Shop[]>([]);
-  const [cities, setCities] = useState<City[]>([]);
-  const [areas, setAreas] = useState<Area[]>([]);
-  const [filteredAreas, setFilteredAreas] = useState<Area[]>([]);
-  const [filteredShops, setFilteredShops] = useState<Shop[]>([]);
+  const [shops, setShops] = useState<any>([]);
+  const [cities, setCities] = useState<any>([]);
+  const [areas, setAreas] = useState<any>([]);
+  const [filteredAreas, setFilteredAreas] = useState<any>([]);
+  const [filteredShops, setFilteredShops] = useState<any>([]);
   const [userDetails, setUserDetails] = useState<{
     name: string;
     email: string;
