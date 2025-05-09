@@ -22,7 +22,6 @@ import { baseURL } from "@/utils/baseURL";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { isLogin } from "@/utils/Auth";
-import { Category } from "./../../../../../../server/src/models/Category.model";
 
 type Category = {
   _id: string;
