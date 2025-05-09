@@ -65,9 +65,9 @@ const cartSlice = createSlice({
       const  product  = action.payload;
       
       
-      state.items = state.items.filter(
-        (item) => item.product._id !== product._id
-      );
+      // state.items = state.items.filter(
+      //   (item) => item.product._id !== product._id
+      // );
       
       updateLocalStorage(state.items);
     },
