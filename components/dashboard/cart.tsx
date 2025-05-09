@@ -7,20 +7,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Cart: React.FC = () => {
-  const cart = useSelector((state: RootState) => state.cart?.items || []) as CartItem[];
-  const [isClient, setIsClient] = useState(false);
-  const pathName = usePathname();
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // const cart = useSelector((state: RootState) => state.cart?.items || []) as CartItem[];
+  // const [isClient, setIsClient] = useState(false);
+  // const pathName = usePathname();
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
-  if (!isClient) {
-    return null; 
-  }
+  // if (!isClient) {
+  //   return null; 
+  // }
 
   return (
     <div className="relative">
-      <div
+{/*       <div
         className={`${
           pathName.includes("/cart") ? "hidden" : ""
         } rounded-full h-9 w-9 cart mt-2 mr-3 flex items-center justify-center`}
@@ -33,7 +33,7 @@ const Cart: React.FC = () => {
             {cart.length}
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
